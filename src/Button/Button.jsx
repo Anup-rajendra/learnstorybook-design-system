@@ -35,7 +35,7 @@ const SIZES = {
 const ButtonLink = styled.a``;
 
 const StyledButton = styled.button`
-  border: 10px solid blue;
+  border: 10px solid red;
   font-size: 20px;
 `;
 export const Button = forwardRef(function Button(
