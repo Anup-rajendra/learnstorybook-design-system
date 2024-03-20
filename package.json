@@ -1,5 +1,5 @@
 {
-  "name": "@anup-rajendra/learnstorybook-design-system",
+  "name": "@anup-rajendra-prasad/learnstorybook-design-system",
   "version": "0.1.0",
   "private": false,
   "main": "dist/cjs/index.js",
@@ -84,6 +84,9 @@
     "http-server": "^14.1.1"
   },
   "description": "Storybook design systems tutorial",
-  "repository": "https://github.com/Anup-rajendra/learnstorybook-design-system.git",
-  "author": "Anup-rajendra <anupsargur2@gmail.com>"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anup-rajendra/learnstorybook-design-system.git"
+  },
+  "author": "anup-rajendra-prasad <anupsargur2@gmail.com>"
 }
