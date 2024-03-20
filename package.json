@@ -1,9 +1,15 @@
 {
   "name": "@anup_rajendra_prasad/learnstorybook-design-system",
-  "version": "0.1.1",
+  "version": "0.1.0",
   "private": false,
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    }
+  },
   "files": [
     "dist/**/*",
     "README.md"
