@@ -22,9 +22,11 @@ jobs:
         run: yarn build-storybook --quiet
       - name: Serve Storybook and run tests
         run: |
-          npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
-             "npx http-server storybook-static --port 8080 --silent" \
-             "npx wait-on tcp:8080 && yarn test-storybook"
+              npx http-server storybook-static --port 6006 --silent &
+              SERVER_PID=$!
+              npx wait-on tcp:6006
+              yarn test-storybook
+              kill $SERVER_PID
   visual-tests:
     # The operating system it will run on
     runs-on: ubuntu-latest
