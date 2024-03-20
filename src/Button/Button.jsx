@@ -31,7 +31,6 @@ const SIZES = {
   SMALL: 'small',
   MEDIUM: 'medium',
 };
-
 const StyledButton = styled.button`
   border: 0;
   border-radius: 3em;

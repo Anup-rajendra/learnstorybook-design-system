@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { Button } from './Button';
 import { Icon } from '../Icon/Icon';
 import { StoryLinkWrapper } from '../LinkWrapper';
-
+import { expect, userEvent, within } from '@storybook/test';
 
 const CustomButton = styled.button`
   border: 1px solid green;
@@ -20,6 +20,24 @@ function ButtonWrapper(props) {
 export default {
   title: 'Design System/Button',
   component: Button,
+};
+
+export const WithInteractions = {
+  args: {
+    appearance: 'primary',
+    href: 'http://storybook.js.org',
+    ButtonWrapper: StoryLinkWrapper,
+    children: 'Button',
+  },
+  play: async ({ canvasElement }) => {
+    // Assigns canvas to the component root element
+    const canvas = within(canvasElement);
+    await userEvent.click(canvas.getByRole('link'));
+    expect(canvas.getByRole('link')).toHaveAttribute(
+      'href',
+      'http://storybook.js.org',
+    );
+  },
 };
 
 export const AllButtons = {
@@ -326,4 +344,3 @@ export const AnchorWrapper = {
     </div>
   ),
 };
-
